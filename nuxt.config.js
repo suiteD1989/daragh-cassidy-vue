@@ -61,6 +61,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    mode: 'production',
     extend (config, ctx) {
     }
   }
