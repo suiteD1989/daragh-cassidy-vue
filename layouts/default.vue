@@ -25,33 +25,6 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
-
-  .main {
-    display: flex;
-    align-items: center !important;
-    height: 100vh;
-    background-color: $white;
-    color: $blue-2;
-
-    h1 {
-      text-align: left;
-      font-family: 'Cabin', sans-serif;
-      text-transform: uppercase;
-      font-size: 3em;
-      font-weight: 900;
-    }
-
-    .main-message {
-      font-size: 3em;
-      font-family: 'Cabin', sans-serif;
-      text-transform: capitalize;
-
-        span {
-          border-bottom: 6px solid $brown;
-        }
-    }
-
-  }
   .skills {
     display: flex;
       align-items: center !important;
@@ -243,72 +216,6 @@
     max-width: 50%;
   }
 
-  .footer {
-
-    background-color: $blue-3;
-    padding-top: 1em;
-    padding-bottom: 1em;
-
-    ul, li {
-      list-style: none;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    p {
-      text-align: center;
-      font-size: 0.7em;
-    }
-
-    .icons {
-
-      font-size: 4em;
-      color: #fff;
-      padding: 0.5em;
-
-    }
-
-    .github {
-        &:hover {
-          color: #24292e;
-          -webkit-transition: color 0.5s ease-out;
-          -moz-transition: color 0.5s ease-out;
-          -o-transition: color 0.5s ease-out;
-          transition: color 0.5s ease-out;
-        }
-      }
-
-      .instagram {
-        &:hover {
-          color: #8a3ab9;
-          -webkit-transition: color 0.5s ease-out;
-          -moz-transition: color 0.5s ease-out;
-          -o-transition: color 0.5s ease-out;
-          transition: color 0.5s ease-out;
-        }
-      }
-
-      .soundcloud {
-        &:hover {
-          color: #f50;
-          -webkit-transition: color 0.5s ease-out;
-          -moz-transition: color 0.5s ease-out;
-          -o-transition: color 0.5s ease-out;
-          transition: color 0.5s ease-out;
-        }
-      }
-
-    .social-links {
-      display: flex;
-      flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-  }
-
   // Media Queries
   /* Landscape phones and down */
   @media (max-width: 480px) {
@@ -367,16 +274,6 @@
 
       .form-fail {
         font-size: 1em !important;
-      }
-    }
-
-    .footer {
-
-      padding-top: 0.75em;
-      padding-bottom: 0.75em;
-
-      .icons {
-        font-size: 3em;
       }
     }
 

@@ -66,14 +66,13 @@ export default {
     .navbar {
         position: relative;
         background: #fbfbfb;
+        padding: 0 1em;
         .hamburger-inner {
             background-color: $blue-1;
         }
-
         .hamburger-inner::after {
             background-color: $blue-1;
         }
-
         .hamburger-inner::before {
             background-color: $blue-1;
         }
@@ -81,6 +80,9 @@ export default {
             outline: 0;
             position: absolute;
             right: 0;
+        }
+        .navbar-brand {
+            font-size: 4em;
         }
         .nav-title {
             color: $blue-1;

@@ -6,13 +6,13 @@
 					<ul>
 						<li>
 							<a href="https://github.com/suiteD1989" target="_blank">
-								<i class="fab fa-github icons github"></i>
+								<font-awesome-icon class="icons github" :icon="['fab', 'github']"/>
 							</a>
 							<a href="https://www.instagram.com/daragh_cassidy/" target="_blank">
-								<i class="fab fa-instagram icons instagram"></i>
+								<font-awesome-icon class="icons instagram" :icon="['fab', 'instagram']"/>
 							</a>
 							<a href="https://soundcloud.com/thesweetd" target="_blank">
-								<i class="fab fa-soundcloud icons soundcloud"></i>
+								<font-awesome-icon class="icons soundcloud" :icon="['fab', 'soundcloud']"/>
 							</a>
 						</li>
 					</ul>
@@ -58,7 +58,7 @@ export default {
         .icons {
             font-size: 4em;
             color: #fff;
-            padding: 0.5em;
+            padding: 0.1em;
         }
         .github {
             &:hover {

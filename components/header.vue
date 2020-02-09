@@ -28,3 +28,31 @@ export default {
     name: 'HeaderSection'
 }
 </script>
+
+<style lang="scss" scoped>
+	$brown: #8E936D;
+	$blue-2: #177E89;
+	
+	.main {
+		display: flex;
+		align-items: center !important;
+		height: 100vh;
+		background-color: #fff;
+		color: $blue-2;
+		h1 {
+			text-align: left;
+			font-family: 'Cabin', sans-serif;
+			text-transform: uppercase;
+			font-size: 2.5em;
+			font-weight: 900;
+		}
+		.main-message {
+			font-size: 2.5em;
+			font-family: 'Cabin', sans-serif;
+			text-transform: capitalize;
+			span {
+				border-bottom: 6px solid $brown;
+			}
+		}
+	}
+</style>
