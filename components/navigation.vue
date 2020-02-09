@@ -42,14 +42,8 @@ export default {
 
 <style lang="scss" scoped>
     $green: #A2AD59;
-    $brown: #8E936D;
     $blue-1: #598381;
-    $blue-2: #177E89;
-    $blue-3: #08605F;
-    $white: #fbfbfb;
-    $black: #202020;
-    $red: #b71212;
-    
+
     .navbar {
         position: relative;
         background: none;
@@ -91,9 +85,6 @@ export default {
         }
         .show-hide {
             display: block !important;
-        }
-        .toggle-visibilty {
-            height: 145px;
         }
     }
 </style>
