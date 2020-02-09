@@ -39,17 +39,17 @@ export default {
     data () {
         return {
             sectionLeft: {
-                title: 'title',
+                title: 'About Me',
                 text: [
-                    'first paragraph',
-                    'second paragraph'
+                    'My Name is Daragh. I\'m a developer based in Dublin, Ireland.',
+                    'If I\'m not building something for the web, I\'m probably in the gym or making dreadfull music.'
                 ]
             },
             sectionRight: {
-                title: 'title',
+                title: 'What I do',
                 text: [
-                    'first paragraph',
-                    'second paragraph'
+                    'I\'m a front end developer at Walks LLC, it\'s pretty chill. I like it.',
+                    'The team here is great and I get to work on a nice tech stack that includes Vue.js, AWS & a small army of awesome micro-services.',
                 ]
             }
         }
