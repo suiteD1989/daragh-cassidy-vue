@@ -12,7 +12,7 @@
 					</div>
 
 					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
-						<i class="fas fa-tachometer-alt"></i>
+                        <font-awesome-icon :icon="['fas', 'tachometer-alt']"/>
 					</div>
 				</div>
 				<div class="row">	
@@ -21,7 +21,7 @@
 					</div>
 
 					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
-						<i class="fas fa-mobile"></i>
+                        <font-awesome-icon :icon="['fas', 'mobile']"/>
 					</div>
 
 					<div class="col-md-6 col-xs-12 col-sm-12 d-flex align-items-center">

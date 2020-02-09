@@ -5,19 +5,26 @@
 				<div class="row">
 					<div class="col-md-6 padding-0">
 						<div class="col-md-12 top">
-							<h2><span>About</span></h2>
+							<h2>
+                                <span>{{ this.sectionLeft.title }}</span>
+                            </h2>
 						</div>
 						<div class="col-md-12 bottom">
-							<p>My Name is Daragh. I'm a developer based in Dublin, Ireland.</p>
-							<p>If I'm not building something for the web, I'm probably in the gym or making dreadfull music.</p>
+							<p v-for="text in (sectionLeft.text)" v-bind:key="text">
+                                {{ text }}
+                            </p>
 						</div>
 					</div>
 					<div class="col-md-6 padding-0">
 						<div class="col-md-12 text-right top">
-							<h2><span>Work</span></h2>
+							<h2>
+                                <span>{{ this.sectionRight.title }}</span>
+                            </h2>
 						</div>
 						<div class="col-md-12 text-right bottom">
-							<p>Howeya</p>
+							<p v-for="text in (sectionRight.text)" v-bind:key="text">
+                                {{ text }}
+                            </p>
 						</div>
 					</div>
 				</div>
@@ -28,7 +35,25 @@
 
 <script>
 export default {
-    name: 'AboutSection'
+    name: 'AboutSection',
+    data () {
+        return {
+            sectionLeft: {
+                title: 'title',
+                text: [
+                    'first paragraph',
+                    'second paragraph'
+                ]
+            },
+            sectionRight: {
+                title: 'title',
+                text: [
+                    'first paragraph',
+                    'second paragraph'
+                ]
+            }
+        }
+    }
 }
 </script>
 

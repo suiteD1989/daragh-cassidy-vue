@@ -23,6 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
+    'node_modules/bootstrap-4-grid/css/grid.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -37,8 +38,22 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+ modules: [
+  [
+    'nuxt-fontawesome', {
+      imports: [
+       {
+         set: '@fortawesome/free-solid-svg-icons',
+         icons: ['fas']
+       },
+       {
+         set:'@fortawesome/free-brands-svg-icons',
+         icons: ['fab']
+       }
+     ]
+    }
+  ]
+],
   /*
   ** Build configuration
   */

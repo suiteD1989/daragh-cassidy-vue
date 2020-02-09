@@ -10,9 +10,8 @@
 			  	</span>
 			</button>
 			<div class="dropdown-content">
-				<a section-target="about" class="section-link">About</a>
-				<a section-target="niche" class="section-link">Optimisation</a>
-				<a section-target="contact" class="section-link">Contact</a>
+				<a v-on:click="scrollToSection('about')" data-target="about" class="section-link">About</a>
+				<a v-on:click="scrollToSection('niche')" data-target="niche" class="section-link">Optimisation</a>
 		    </div>
 		</nav>	
 	</header>
@@ -21,20 +20,40 @@
 <script>
 export default {
     name: 'Navigation',
+    data () {
+        return {
+            hamburger: Object,
+            dropdown: Object,
+            links: Object
+        }
+    },
+    mounted () {
+        this.hamburger = document.getElementsByClassName('hamburger')[0];
+        this.dropdown = document.getElementsByClassName('dropdown-content')[0];
+        this.links = document.getElementsByClassName('section-link');
+    },
     methods: {
         /**
          * toggleNavigation click listen to show/hide nav items
          */
         toggleNavigation () {
-            const hamburger = document.getElementsByClassName('hamburger')[0];
-            const dropdown = document.getElementsByClassName('dropdown-content')[0];
-            const links = document.getElementsByClassName('section-link');
-            hamburger.classList.toggle('is-active');
-            dropdown.classList.toggle('show-hide');
+            this.hamburger.classList.toggle('is-active');
+            this.dropdown.classList.toggle('show-hide');
             
-            [].forEach.call(links, (item, index) => {
+            [].forEach.call(this.links, (item, index) => {
                 item.classList.toggle('show-hide');
             })
+        },
+        /**
+         * scrollToSection bring user to section from clicking nav item
+         */
+        scrollToSection (target) {
+            const section = document.getElementById(target)
+            section.scrollIntoView({
+                behavior: "smooth", 
+                block: "end", 
+                inline: "nearest"
+            });
         }
     }
 }
@@ -46,7 +65,7 @@ export default {
 
     .navbar {
         position: relative;
-        background: none;
+        background: #fbfbfb;
         .hamburger-inner {
             background-color: $blue-1;
         }
