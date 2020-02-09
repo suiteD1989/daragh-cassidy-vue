@@ -37,58 +37,6 @@
     background-color: $blue-1;
   }
 
-  .navbar {
-    background: none;
-
-      button {
-        outline: 0;
-      }
-
-    .nav-title {
-      color: $blue-1;
-
-      &:hover {
-        cursor: pointer;
-        color: $green;
-      }
-    }	
-
-    .dropdown-content {
-      transition: all 0.5s;
-      overflow-y: hidden;
-      position: absolute;
-      width: 250px;
-      height: 0;
-      top: 4.8em;
-      z-index: 1030;
-      right: 0;
-
-        a {
-          transition: all 1s;
-          float: none;
-          text-transform: uppercase;
-          text-align: right !important;
-          padding: 12px 16px;
-            text-decoration: none;
-            display: none;
-            color: $blue-1;
-
-              &:hover {
-                color: $green;
-                text-decoration: underline;
-              }
-        }
-    }
-
-    .show-hide {
-      display: block !important;
-    }
-
-    .toggle-visibilty {
-      height: 145px;
-    }
-  }
-
   .main {
     display: flex;
       align-items: center !important;
@@ -334,7 +282,7 @@
     right: 10%;
     padding-bottom: 1.5em;
   }
-  
+
   .text-left {
     text-align: left;
   }
