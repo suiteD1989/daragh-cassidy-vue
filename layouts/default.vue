@@ -19,27 +19,16 @@
   $red: #b71212;
 
   body {
+    margin: 0;
     font-family: 'Cabin', sans-serif;
     color: #fff;
     overflow-x: hidden;
-      overflow-y: scroll;
-  }
-
-  .hamburger-inner {
-    background-color: $blue-1;
-  }
-
-  .hamburger-inner::after {
-    background-color: $blue-1;
-  }
-
-  .hamburger-inner::before {
-    background-color: $blue-1;
+    overflow-y: scroll;
   }
 
   .main {
     display: flex;
-      align-items: center !important;
+    align-items: center !important;
     height: 100vh;
     background-color: $white;
     color: $blue-2;
@@ -63,52 +52,6 @@
     }
 
   }
-
-  .about {
-    display: flex;
-      align-items: center !important;
-    color: $blue-1;
-    height: 100vh;
-    background: rgba(142,147,109, .3);
-
-      h2 {
-        font-size: 3em;
-        font-weight: 900;
-        text-transform: uppercase;
-      }
-
-      a {
-        color: $green;
-      }
-
-      p {
-        font-size: 1.2em;
-        font-weight: 100;
-      }
-
-      .top {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-
-          span {
-            border-bottom: 6px solid $brown;
-          }
-      }
-
-      .bottom {
-        // background-color: $blue-2;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-      }
-
-      .profile {
-        img {
-          // border-radius: 100%;
-          width: 50%;
-        }
-      }
-  }
-
   .skills {
     display: flex;
       align-items: center !important;

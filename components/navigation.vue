@@ -47,6 +47,17 @@ export default {
     .navbar {
         position: relative;
         background: none;
+        .hamburger-inner {
+            background-color: $blue-1;
+        }
+
+        .hamburger-inner::after {
+            background-color: $blue-1;
+        }
+
+        .hamburger-inner::before {
+            background-color: $blue-1;
+        }
         button {
             outline: 0;
             position: absolute;
