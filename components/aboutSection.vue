@@ -96,5 +96,30 @@ export default {
                 width: 50%;
             }
         }
+        .text-right {
+            text-align: right;
+        }
+        .padding-0{
+            padding-right :0;
+            padding-left: 0;
+        }
     }
+    @media (max-width: 480px) {
+		.about {
+            h2 {
+                font-size: 1.4em;
+            }
+            height: 100%;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+	}
+	@media (max-width: 767px) and (orientation: landscape) {
+		.about {
+            height: 35em;
+            font-size: 0.7em;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+        }
+	}
 </style>

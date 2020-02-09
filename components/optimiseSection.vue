@@ -40,5 +40,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    $brown: #8E936D;
+    $blue-1: #598381;
+    $blue-2: #177E89;
+    $white: #fbfbfb;
 
+    .niche {
+        display: flex;
+        align-items: center !important;
+        color: $blue-1;
+        height: 100vh;
+        background-color: $white;
+        h2 {
+            text-transform: uppercase;
+            font-size: 3em;
+            font-weight: 900;
+            color: $blue-2;
+        }
+        a {
+            color: $blue-2;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.2em;
+            font-weight: 100;
+        }
+        .top {
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            span {
+                border-bottom: 6px solid $brown;
+            }
+        }
+        .niche-icon {
+            font-size: 7em;
+        }
+    }
+    @media (max-width: 480px) {
+		.niche {
+            h2 {
+                font-size: 1.4em;
+            }
+            height: 100%;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+	}
+	@media (max-width: 767px) and (orientation: landscape) {
+		.niche {
+            height: 45em;
+            font-size: 0.7em;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+        }
+	}
 </style>

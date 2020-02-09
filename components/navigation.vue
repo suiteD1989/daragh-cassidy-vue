@@ -1,6 +1,6 @@
 <template>
     <header>
-		<nav class="navbar fixed-top">
+		<nav class="container navbar fixed-top">
 	 		<span class="navbar-brand nav-title">
   				<a section-target="main" class="return-top">DC</a>
   			</span>
@@ -10,8 +10,14 @@
 			  	</span>
 			</button>
 			<div class="dropdown-content">
-				<a v-on:click="scrollToSection('about')" data-target="about" class="section-link">About</a>
-				<a v-on:click="scrollToSection('niche')" data-target="niche" class="section-link">Optimisation</a>
+                <a 
+                    v-for="item in (navLinks)" 
+                    v-bind:key="item.title"
+                    class="section-link"
+                    v-on:click="scrollToSection(item.config)"
+                >
+                    {{ item.title }}
+                </a>
 		    </div>
 		</nav>	
 	</header>
@@ -24,7 +30,17 @@ export default {
         return {
             hamburger: Object,
             dropdown: Object,
-            links: Object
+            links: Object,
+            navLinks: [
+                {
+                    title: 'About',
+                    config: 'about'
+                },
+                {
+                    title: 'Optimisation',
+                    config: 'niche'
+                }
+            ]
         }
     },
     mounted () {
@@ -65,8 +81,6 @@ export default {
 
     .navbar {
         position: relative;
-        background: #fbfbfb;
-        padding: 0 1em;
         .hamburger-inner {
             background-color: $blue-1;
         }
