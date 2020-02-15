@@ -95,3 +95,9 @@ node_modules
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+#deploy
+staging_bundle/*
+production_bundle/*
+bundle.zip
+production_bundle.zip
