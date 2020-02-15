@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="container-fluid">
 		<nav class="container navbar fixed-top">
 	 		<span class="navbar-brand nav-title">
   				<a section-target="main" class="return-top">DC</a>
