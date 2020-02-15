@@ -101,3 +101,4 @@ staging_bundle/*
 production_bundle/*
 bundle.zip
 production_bundle.zip
+key.txt
