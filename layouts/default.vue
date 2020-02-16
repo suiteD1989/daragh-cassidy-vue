@@ -21,6 +21,9 @@
     filter: blur(5px);
   }
   // Overrides
+  a:link {
+    text-decoration: none;
+  }
   .row {
     margin-left: 0;
     margin-right: 0;

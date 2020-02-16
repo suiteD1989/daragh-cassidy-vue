@@ -58,7 +58,8 @@ typings/
 
 # dotenv environment variables file
 .env
-
+production.env
+staging.env
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
@@ -104,3 +105,5 @@ production_bundle/*
 bundle.zip
 production_bundle.zip
 key.txt
+
+

@@ -2,7 +2,7 @@
   <div>
     <Navigation/>
         <section class="container blog content-piece">
-            <PostTile :posts="blogPosts"/>
+          <PostTile :posts="blogPosts"/>
         </section>
     <Footer/>
   </div>
@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
     $brown: #8E936D;
-	$blue-2: #177E89;
+	  $blue-2: #177E89;
 
     .blog {
         color: $blue-2;

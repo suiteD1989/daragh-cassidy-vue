@@ -1,4 +1,5 @@
-const env = require('dotenv').config()
+const checkProduction = process.env.WORK_ENV === 'production'
+const env = checkProduction ? require('dotenv').config({ path: 'production.env' }) : require('dotenv').config({ path: 'staging.env' })
 
 export default {
   mode: 'universal',
@@ -6,11 +7,9 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -19,7 +18,8 @@ export default {
   env: {
     CTF_SPACE_ID: env.parsed.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: env.parsed.CTF_CDA_ACCESS_TOKEN,
-    CTF_ENVIRONMENT: env.parsed.CTF_ENVIRONMENT
+    CTF_ENVIRONMENT: env.parsed.CTF_ENVIRONMENT,
+    WORK_ENV: env.parsed.WORK_ENV
   },
   /*
   ** Customize the progress-bar color

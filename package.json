@@ -5,8 +5,9 @@
   "author": "suiteD1989",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "env WORK_ENV=development nuxt",
+    "build": "env WORK_ENV=production nuxt build",
+    "staging": "env WORK_ENV=development nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest"
