@@ -10,9 +10,14 @@
                 :data-src="thumbnailImage(post.fields.heroImage.fields.file.url)" 
                 :alt="post.fields.heroImage.fields.description"
                 class="lazyload">
-              <span>
-                  {{ post.fields.title }}
-              </span>
+              <div class="tileText">
+                <span class="title">
+                    {{ post.fields.title }}
+                </span>
+                <span class="description">
+                    {{ post.fields.description }}
+                </span>
+              </div>
             </div>
           </nuxt-link>
       </div>
@@ -45,22 +50,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  $blue-1: #598381;
   $blue-2: #177E89;
-  
+  $blue-3: #08605F;
+  $black: #443d47;
+
   .blog-tile {
+    &:hover {
+      .title {
+        color: $blue-3;
+      }
+    }
     img {
       width: 100%;
     }
-    span {
-      color: $blue-2;
-      text-decoration: none;
-      margin: 1em 0;
-      display: block;
-      text-align: center;
-    }
     border: solid 1px $blue-2;
-    .blog-link {
-      text-decoration: none;
+    margin-bottom: 1em;
+    .tileText {
+      padding: 0 .5em;
+      span {
+        color: $blue-1;
+        text-decoration: none;
+        margin: 1em 0;
+        display: block;
+      }
+      .title {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.1em;
+      }
+      .description {
+        font-size: .9em;
+        font-weight: 400;
+        color: $black;
+      }
     }
   }
 </style>

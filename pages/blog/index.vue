@@ -47,5 +47,6 @@ export default {
 
     .blog {
         color: $blue-2;
+        padding: 2.5em 0;
     }
 </style>
