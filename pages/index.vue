@@ -14,7 +14,7 @@ import Navigation from '~/components/navigation.vue'
 import HeaderSection from '~/components/header.vue'
 import AboutSection from '~/components/aboutSection.vue'
 import OptimiseSection from '~/components/optimiseSection.vue'
-import Footer from '~/components/Footer.vue'
+import Footer from '~/components/footer.vue'
 
 export default {
   components: {
