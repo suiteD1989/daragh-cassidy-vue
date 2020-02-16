@@ -15,6 +15,11 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
+  // Global
+  .blur {
+    transition: all .25s ease-in-out;
+    filter: blur(5px);
+  }
   // Overrides
   .row {
     margin-left: 0;

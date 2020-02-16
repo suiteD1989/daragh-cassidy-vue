@@ -31,6 +31,7 @@ export default {
             hamburger: Object,
             dropdown: Object,
             links: Object,
+            content: Object,
             navLinks: [
                 {
                     title: 'About',
@@ -47,6 +48,7 @@ export default {
         this.hamburger = document.getElementsByClassName('hamburger')[0];
         this.dropdown = document.getElementsByClassName('dropdown-content')[0];
         this.links = document.getElementsByClassName('section-link');
+        this.content = document.getElementsByClassName('content-piece');
     },
     methods: {
         /**
@@ -58,13 +60,18 @@ export default {
             
             [].forEach.call(this.links, (item, index) => {
                 item.classList.toggle('show-hide');
-            })
+            });
+
+            [].forEach.call(this.content, (item, index) => {
+                item.classList.toggle('blur');
+            });
         },
         /**
          * scrollToSection bring user to section from clicking nav item
          */
         scrollToSection (target) {
             const section = document.getElementById(target)
+            this.toggleNavigation()
             section.scrollIntoView({
                 behavior: "smooth", 
                 block: "end", 

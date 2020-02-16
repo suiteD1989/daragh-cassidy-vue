@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="content-piece">
 		<div class="container-fluid section-animate niche" id="niche">
 			<div class="container">
 				<div class="row">

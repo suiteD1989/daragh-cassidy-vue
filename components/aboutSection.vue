@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="content-piece">
 		<div class="container-fluid section-animate about" id="about">
 			<div class="container">
 				<div class="row">
