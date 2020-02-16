@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation/>
-        <section class="container blog">
+        <section class="container blog content-piece">
             <PostTile :posts="blogPosts"/>
         </section>
     <Footer/>

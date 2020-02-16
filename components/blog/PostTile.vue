@@ -2,7 +2,12 @@
   <div> 
       <div  v-for="(post, index) in posts" v-bind:key="index">
           <nuxt-link :to="'/blog/' + post.fields.slug.trim()">
-             {{ post.fields.title }}
+            <div class="blog-tile">
+                <img :data-src="thumbnailImage(post.fields.heroImage.fields.file.url)" class="lazyload">
+                <span>
+                    {{ post.fields.title }}
+                </span>
+            </div>
           </nuxt-link>
       </div>
   </div>
@@ -10,15 +15,16 @@
 
 <script>
 
+import optimise from '~/mixins/optimise.js'
+
 export default {
-  components: {
-  },
+  mixins: [optimise],
   props: {
       posts: Array
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

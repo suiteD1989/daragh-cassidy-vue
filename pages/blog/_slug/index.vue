@@ -1,6 +1,9 @@
 <template>
   <div>
     <Navigation/>
+    <article class="container blog-post content-piece">
+      {{ page.fields.body }}
+    </article>
     <Footer/>
   </div>
 </template>
@@ -35,6 +38,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .blog-post {
+    color: black;
+  }
 </style>
