@@ -2,7 +2,9 @@
     <header class="container-fluid">
 		<nav class="container navbar fixed-top">
 	 		<span class="navbar-brand nav-title">
-  				<a section-target="main" class="return-top">DC</a>
+  				<nuxt-link :to="'/'">
+                  DC
+                </nuxt-link>
   			</span>
 		  	<button class="hamburger hamburger--spin" type="button" v-on:click="toggleNavigation">
 		  		<span class="hamburger-box">
@@ -104,6 +106,10 @@ export default {
         }
         .navbar-brand {
             font-size: 4em;
+            a {
+                color: $blue-1;
+                text-decoration: none;
+            }
         }
         .nav-title {
             color: $blue-1;

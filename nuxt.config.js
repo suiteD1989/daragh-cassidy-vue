@@ -1,3 +1,4 @@
+const env = require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -14,6 +15,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+  env: {
+    CTF_SPACE_ID: env.parsed.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: env.parsed.CTF_CDA_ACCESS_TOKEN,
+    CTF_ENVIRONMENT: env.parsed.CTF_ENVIRONMENT
   },
   /*
   ** Customize the progress-bar color
@@ -34,6 +40,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Nuxt.js modules
