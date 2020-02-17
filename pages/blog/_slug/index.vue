@@ -1,28 +1,26 @@
 <template>
   <div>
     <Navigation :navLinks="this.navItems"/>
-    <article class="container-fluid blog-post content-piece">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="intro">
-              <h1>{{ page.fields.title }}</h1>
-              <span>{{ page.fields.author.fields.name }}</span>
-            </div>
-            <client-only>
-              <img 
-              :data-src="setAutoWidth(page.fields.heroImage.fields.file.url)"
-              :alt="page.fields.heroImage.fields.description"
-              class="lazyload header-img">
-            </client-only>
+    <article class="container blog-post content-piece">
+      <div class="row">
+        <div class="col-12">
+          <div class="intro">
+            <h1>{{ page.fields.title }}</h1>
+            <span>{{ page.fields.author.fields.name }}</span>
           </div>
+          <client-only>
+            <img 
+            :data-src="setAutoWidth(page.fields.heroImage.fields.file.url)"
+            :alt="page.fields.heroImage.fields.description"
+            class="lazyload header-img">
+          </client-only>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <p>
-              {{ page.fields.body }}
-            </p>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>
+            {{ page.fields.body }}
+          </p>
         </div>
       </div>
     </article>
@@ -109,6 +107,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
   .blog-post {
     color: black;
     $blue-1: #598381;
