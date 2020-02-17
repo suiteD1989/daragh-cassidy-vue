@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation/>
+    <Navigation :navLinks="this.navItems"/>
         <section class="container blog content-piece">
           <PostTile :posts="blogPosts"/>
         </section>
@@ -26,6 +26,17 @@ export default {
     PostTile
   },
   mixins: [robots],
+  data () {
+    return {
+      navItems: [
+        {
+          title: 'Home',
+          config: 'home',
+          link: '/'
+        }
+      ]
+    }
+  },
   head () {
     return {
       title: 'Daragh Cassidy | Web Development | Blog',

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation/>
+    <Navigation :navLinks="this.navItems"/>
     <HeaderSection/>
     <AboutSection/>
     <OptimiseSection/>
@@ -27,6 +27,27 @@ export default {
     Footer
   },
   mixins: [robots],
+  data () {
+    return {
+      navItems: [
+        {
+            title: 'About',
+            config: 'about',
+            link: false
+        },
+        {
+            title: 'Optimisation',
+            config: 'niche',
+            link: false
+        },
+        {
+            title: 'Blog',
+            config: 'blog',
+            link: '/blog'
+        }
+      ]
+    }
+  },
   head () {
     return {
       title: 'Daragh Cassidy | Web Development',

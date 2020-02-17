@@ -12,14 +12,24 @@
 			  	</span>
 			</button>
 			<div class="dropdown-content">
-                <a 
+                <div
                     v-for="item in (navLinks)" 
                     v-bind:key="item.title"
                     class="section-link"
-                    v-on:click="scrollToSection(item.config)"
                 >
-                    {{ item.title }}
-                </a>
+                    <nuxt-link 
+                        v-if="item.link"
+                        :to="item.link" prefetch>
+                        <span>
+                            {{ item.title }}
+                        </span>
+                    </nuxt-link>
+                    <span 
+                        v-else 
+                        v-on:click="scrollToSection(item.config)">
+                        {{ item.title }}
+                    </span>
+                </div>
 		    </div>
 		</nav>	
 	</header>
@@ -33,17 +43,13 @@ export default {
             hamburger: Object,
             dropdown: Object,
             links: Object,
-            content: Object,
-            navLinks: [
-                {
-                    title: 'About',
-                    config: 'about'
-                },
-                {
-                    title: 'Optimisation',
-                    config: 'niche'
-                }
-            ]
+            content: Object
+        }
+    },
+    props: {
+        navLinks: {
+            required: true,
+            type: Array
         }
     },
     mounted () {
@@ -127,14 +133,14 @@ export default {
             top: 4.8em;
             z-index: 1030;
             right: 0;
-            a {
-                transition: all 1s;
+            span {
+                transition: all .25s;
                 float: none;
                 text-transform: uppercase;
                 text-align: right !important;
                 padding: 12px 16px;
                 text-decoration: none;
-                display: none;
+                display: block;
                 color: $blue-1;
                 &:hover {
                     color: $green;
