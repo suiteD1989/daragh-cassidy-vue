@@ -16,6 +16,8 @@ import AboutSection from '~/components/aboutSection.vue'
 import OptimiseSection from '~/components/optimiseSection.vue'
 import Footer from '~/components/footer.vue'
 
+import robots from '~/mixins/robots.js';
+
 export default {
   components: {
     Navigation,
@@ -23,6 +25,34 @@ export default {
     AboutSection,
     OptimiseSection,
     Footer
+  },
+  mixins: [robots],
+  head () {
+    return {
+      title: 'Daragh Cassidy | Web Development',
+      meta: [
+        {
+          hid: 'robots', 
+          name: 'robots', 
+          content: this.setRobotsTag(process.env.SET_ENVIRONMENT)
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Daragh Cassidy | Web Development'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Dublin Based Web Developer | Available For Freelance Work'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Dublin Based Web Developer | Available For Freelance Work'
+        }
+      ]
+    }
   }
 }
 </script>

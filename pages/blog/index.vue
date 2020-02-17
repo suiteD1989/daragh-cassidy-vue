@@ -14,6 +14,8 @@ import Navigation from '~/components/navigation.vue';
 import Footer from '~/components/footer.vue';
 import PostTile from '~/components/blog/PostTile.vue';
 
+import robots from '~/mixins/robots.js';
+
 import { createClient } from '~/plugins/contentful';
 const contentfulClient = createClient();
 
@@ -22,6 +24,34 @@ export default {
     Navigation,
     Footer,
     PostTile
+  },
+  mixins: [robots],
+  head () {
+    return {
+      title: 'Daragh Cassidy | Web Development | Blog',
+      meta: [
+        {
+          hid: 'robots', 
+          name: 'robots', 
+          content: this.setRobotsTag(process.env.SET_ENVIRONMENT)
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Daragh Cassidy | Web Development | Blog'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Daragh Cassidy\'s Personal Blog'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Daragh Cassidy\'s Personal Blog'
+        }
+      ]
+    }
   },
   asyncData ({env}) {
     return Promise.all([
