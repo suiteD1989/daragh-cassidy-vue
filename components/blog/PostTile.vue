@@ -39,7 +39,8 @@ export default {
     * actually value for prod to prevent posts going live before they're ready
     */
     isPublished (status) {
-      if (process.env.WORK_ENV === 'development') {
+      console.log(process.env.SET_ENVIRONMENT)
+      if (process.env.SET_ENVIRONMENT === 'development') {
         return true
       } else {
         return status

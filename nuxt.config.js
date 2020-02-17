@@ -1,4 +1,4 @@
-const checkProduction = process.env.WORK_ENV === 'production'
+const checkProduction = process.env.SET_ENVIRONMENT === 'production'
 const env = checkProduction ? require('dotenv').config({ path: 'production.env' }) : require('dotenv').config({ path: 'staging.env' })
 
 export default {
@@ -19,7 +19,7 @@ export default {
     CTF_SPACE_ID: env.parsed.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: env.parsed.CTF_CDA_ACCESS_TOKEN,
     CTF_ENVIRONMENT: env.parsed.CTF_ENVIRONMENT,
-    WORK_ENV: env.parsed.WORK_ENV
+    SET_ENVIRONMENT: env.parsed.SET_ENVIRONMENT
   },
   /*
   ** Customize the progress-bar color
