@@ -11,9 +11,9 @@
 <script>
 
 import Navigation from '~/components/navigation.vue'
-import HeaderSection from '~/components/header.vue'
-import AboutSection from '~/components/aboutSection.vue'
-import OptimiseSection from '~/components/optimiseSection.vue'
+import HeaderSection from '~/components/home/header.vue'
+import AboutSection from '~/components/home/aboutSection.vue'
+import OptimiseSection from '~/components/home/optimiseSection.vue'
 import Footer from '~/components/footer.vue'
 
 import robots from '~/mixins/robots.js';
