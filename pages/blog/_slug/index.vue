@@ -18,9 +18,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <p>
-            {{ page.fields.body }}
-          </p>
+          <div v-html="this.rawHTML"></div>
         </div>
       </div>
     </article>
@@ -37,6 +35,7 @@ import robots from '~/mixins/robots.js';
 import optimise from '~/mixins/optimise.js';
 
 import {createClient} from '~/plugins/contentful';
+
 const contentfulClient = createClient();
 
 export default {
@@ -60,7 +59,7 @@ export default {
           link: '/blog'
         }
       ],
-      pageData: Object
+      rawHTML: Object
     }
   },
   head () {
@@ -90,16 +89,22 @@ export default {
       ]
     }
   },
+  methods: {
+  },
+  created () {
+    this.rawHTML = this.page.fields.body
+  },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
         'content_type': 'blogPost',
         'fields.slug': params.slug
     })
-    .then(page => {
+    .then(res => {
         return {
-            page: page.items[0]
+            page: res.items[0]
         }
-    }).catch(err => {
+    })
+    .catch(err => {
         console.log(err)
     })
     }
@@ -111,12 +116,20 @@ export default {
     margin-right: -15px;
     margin-left: -15px;
   }
-  .blog-post {
-    color: black;
+  /deep/ .blog-post {
+    color: #423f3f;
     $blue-1: #598381;
     $blue-2: #177E89;
     $blue-3: #08605F;
-
+    h2 {
+      color: $blue-2;
+      text-transform: uppercase;
+    }
+    p {
+      padding: .75em 0;
+      font-size: 1.1em;
+      letter-spacing: .8px;
+    }
     .intro {
       h1 {
         font-size: 2em;
