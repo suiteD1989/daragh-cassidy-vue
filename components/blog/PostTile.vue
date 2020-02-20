@@ -4,7 +4,7 @@
           <nuxt-link
             :to="'/blog/' + post.fields.slug.trim()" 
             class="blog-link" 
-            v-if="isPublished(post.published)">
+            v-if="isPublished(post.fields.published)">
             <div class="blog-tile">
               <img 
                 :data-src="thumbnailImage(post.fields.heroImage.fields.file.url)" 
@@ -39,6 +39,7 @@ export default {
     * actually value for prod to prevent posts going live before they're ready
     */
     isPublished (status) {
+      console.log(status)
       if (process.env.SET_ENVIRONMENT === 'development') {
         return true
       } else {
