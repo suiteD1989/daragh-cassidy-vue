@@ -29,9 +29,9 @@ export default  {
         },
         thumbnailImage (url) {
             if (this.checkBrowser()) {
-                return url + '?w=300'
+                return url + '?w=650'
             } else {
-                return url + '?w=300&fm=webp'
+                return url + '?w=650&fm=webp'
             }
         },
         setAutoWidth (url) {
