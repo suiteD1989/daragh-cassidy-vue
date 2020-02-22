@@ -18,7 +18,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div v-html="this.rawHTML"></div>
+          <RichTextRenderer :document="this.richTextField" />
         </div>
       </div>
     </article>
@@ -29,6 +29,7 @@
 <script>
 
 import Navigation from '~/components/navigation.vue';
+import RichTextRenderer from 'contentful-rich-text-vue-renderer';
 import Footer from '~/components/footer.vue';
 
 import robots from '~/mixins/robots.js';
@@ -43,6 +44,7 @@ export default {
   mixins: [robots, optimise],
   components: {
     Navigation,
+    RichTextRenderer,
     Footer
   },
   data () {
@@ -59,7 +61,7 @@ export default {
           link: '/blog'
         }
       ],
-      rawHTML: Object
+      richTextField: Object
     }
   },
   head () {
@@ -89,10 +91,8 @@ export default {
       ]
     }
   },
-  methods: {
-  },
   created () {
-    this.rawHTML = this.page.fields.body
+    this.richTextField = this.page.fields.postBody
   },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
