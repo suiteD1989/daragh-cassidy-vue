@@ -6,8 +6,18 @@
         <div class="col-12">
           <div class="intro">
             <h1>{{ page.fields.title }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 my-auto">
+          <div class="author">
             <span>{{ page.fields.author.fields.name }}</span>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12"> 
           <client-only>
             <img 
             :data-src="setAutoWidth(page.fields.heroImage.fields.file.url)"
@@ -21,6 +31,8 @@
           <RichTextRenderer :document="this.richTextField" />
         </div>
       </div>
+      <hr>
+      <Author :details="this.author"/>
     </article>
     <Footer/>
   </div>
@@ -30,6 +42,7 @@
 
 import Navigation from '~/components/navigation.vue';
 import RichTextRenderer from 'contentful-rich-text-vue-renderer';
+import Author from '~/components/blog/Author'
 import Footer from '~/components/footer.vue';
 
 import robots from '~/mixins/robots.js';
@@ -45,6 +58,7 @@ export default {
   components: {
     Navigation,
     RichTextRenderer,
+    Author,
     Footer
   },
   data () {
@@ -61,7 +75,8 @@ export default {
           link: '/blog'
         }
       ],
-      richTextField: Object
+      richTextField: Object,
+      author: Object
     }
   },
   head () {
@@ -93,6 +108,7 @@ export default {
   },
   created () {
     this.richTextField = this.page.fields.postBody
+    this.author = this.page.fields.author
   },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
@@ -100,6 +116,7 @@ export default {
         'fields.slug': params.slug
     })
     .then(res => {
+        console.log(res.items[0].fields.author.fields.image.fields.file.url)
         return {
             page: res.items[0]
         }
@@ -116,6 +133,12 @@ export default {
     margin-right: -15px;
     margin-left: -15px;
   }
+  hr {
+    color: #598381;
+    height: 1px;
+    background-color: #598381;
+    border: none;
+  }
   /deep/ .blog-post {
     color: #423f3f;
     $blue-1: #598381;
@@ -130,12 +153,20 @@ export default {
       font-size: 1.1em;
       letter-spacing: .8px;
     }
+    a {
+      color: $blue-1;
+        &:hover {
+          color: $blue-3;
+        }
+    }
     .intro {
       h1 {
         font-size: 2em;
         color: $blue-2;
         text-transform: uppercase;
       }
+    }
+    .author {
       span {
         color: $blue-1;
         font-size: .9em;
