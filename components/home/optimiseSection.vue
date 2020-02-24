@@ -95,7 +95,7 @@ export default {
             font-size: 7em;
         }
     }
-    @media (max-width: 480px) {
+    @media (max-width: 767px) {
 		.niche {
             h2 {
                 font-size: 1.4em;
@@ -103,6 +103,11 @@ export default {
             height: 100%;
             padding-top: 2em;
             padding-bottom: 2em;
+            .niche-icon {
+                display: flex;
+                order: 2;
+                justify-content: center;
+            }
         }
 	}
 	@media (max-width: 767px) and (orientation: landscape) {

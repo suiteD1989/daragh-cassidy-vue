@@ -85,6 +85,7 @@ export default {
             }
             .profile {
                 width: 60%;
+                height: 100%;
             }
         }
     }
