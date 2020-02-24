@@ -5,33 +5,27 @@
 				<div class="row">
 					<div class="col-12 top">
 						<h2>
-                            <span>{{ this.optimise.title }}</span>
+                            <span>{{ this.skills.title }}</span>
                         </h2>
-					</div>
-					
+					</div>	
 					<div class="col-md-8 col-xs-12 col-sm-12 d-flex align-items-center">
-                        <p v-for="text in (optimise.text)" v-bind:key="text">
+                        <p v-for="text in (skills.text)" v-bind:key="text">
                             {{ text }}
                         </p>
 					</div>
-
 					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
                         <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.daraghcassidy.com%2F&tab=desktop" target="_blank">
                             <font-awesome-icon :icon="['fas', 'tachometer-alt']"/>
                         </a>
 					</div>
 				</div>
+                <br>
+                <br>
+                <br>
 				<div class="row">	
-					<div class="col-12 top">
-						<h2>
-                            <span>{{ this.responsive.title }}</span>
-                        </h2>
-					</div>
-
 					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
                         <font-awesome-icon :icon="['fas', 'mobile']"/>
 					</div>
-
 					<div class="col-md-6 col-xs-12 col-sm-12 d-flex align-items-center">
                         <p v-for="text in (responsive.text)" v-bind:key="text">
                             {{ text }}
@@ -48,14 +42,13 @@ export default {
     name: 'OptimiseSection',
     data () {
         return {
-            optimise: {
-                title: 'Page Speed',
+            skills: {
+                title: 'Things I\'m Good At',
                 text: [
                     'Less is more when it comes to building performent web apps and sites. I keep overheads to a minimum by reducing third party dependencies, this keeps pages light and fast. Run this page through Google\'s lighthouse and see for yourself.'
                 ]
             },
             responsive: {
-                title: 'Responsiveness',
                 text: [
                     'What good is a site that doesn\'t look fantastic on all devices? All my sites look great at every screen size to ensure that every user has the same enjoyable experience.'
                 ]

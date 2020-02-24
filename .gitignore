@@ -105,5 +105,9 @@ production_bundle/*
 bundle.zip
 production_bundle.zip
 key.txt
+deploy_staging.sh
+deploy_production.sh 
+
+.elasticbeanstalk
 
 

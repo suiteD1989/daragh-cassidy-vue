@@ -36,7 +36,7 @@ export default {
             link: false
         },
         {
-            title: 'Optimisation',
+            title: 'Skills',
             config: 'niche',
             link: false
         },

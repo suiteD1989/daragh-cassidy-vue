@@ -42,7 +42,11 @@ export default {
   */
   buildModules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/gtm'
   ],
+  gtm: {
+    id: 'GTM-TDRCV59'
+  },
   /*
   ** Nuxt.js modules
   */

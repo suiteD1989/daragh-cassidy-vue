@@ -14,6 +14,7 @@
           <div class="col-12 my-auto">
             <div class="author">
               <span>{{ page.fields.author.fields.name }}</span>
+              <span>{{ this.publishDate }}</span>
             </div>
           </div>
         </div>
@@ -78,7 +79,8 @@ export default {
         }
       ],
       richTextField: Object,
-      author: Object
+      author: Object,
+      publishDate: String
     }
   },
   head () {
@@ -111,6 +113,7 @@ export default {
   created () {
     this.richTextField = this.page.fields.postBody
     this.author = this.page.fields.author
+    this.publishDate = this.page.fields.publishDate
   },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
@@ -125,7 +128,7 @@ export default {
     .catch(err => {
         console.log(err)
     })
-    }
+  }
 }
 </script>
 
