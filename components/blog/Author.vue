@@ -4,7 +4,7 @@
             <h2>About Daragh</h2>
         </div>
         <div class="col-md-3 col-lg-3 col-sm-12 my-auto profile-parent">
-            <img :data-src="this.details.fields.image.fields.file.url" class="lazyload profile">
+            <img :data-src="this.details.fields.image.fields.file.url" class="lazyload profile" alt="Hi, my name is Daragh!">
         </div>
         <div class="col-md-9 col-lg-9 col-sm-12">
             <div class="col-12">
