@@ -159,6 +159,12 @@ export default {
           color: $blue-3;
         }
     }
+    code {
+      background: #ececec;
+      display: block;
+      white-space: pre-wrap;
+      padding: 1em;
+    }
     .intro {
       h1 {
         font-size: 2em;
