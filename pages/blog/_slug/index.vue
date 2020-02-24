@@ -106,6 +106,11 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           content: this.page.fields.description
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.page.fields.heroImage.fields.file.url
         }
       ]
     }
