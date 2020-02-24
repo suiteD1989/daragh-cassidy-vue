@@ -42,11 +42,10 @@ export default {
   */
   buildModules: [
     '@nuxtjs/dotenv',
-    '@nuxtjs/gtm'
+    [ '@nuxtjs/google-analytics', {
+      id: 'UA-120092935-1'
+    }]
   ],
-  gtm: {
-    id: 'GTM-TDRCV59'
-  },
   /*
   ** Nuxt.js modules
   */
