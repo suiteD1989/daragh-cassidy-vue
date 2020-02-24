@@ -1,8 +1,12 @@
 <template>
   <div>
     <Navigation :navLinks="this.navItems"/>
-        <section class="container blog content-piece">
-          <PostTile :posts="blogPosts"/>
+        <section class="blog container-fluid content-piece">
+          <div class="container">
+            <div  class="row">
+              <PostTile :posts="blogPosts"/>
+            </div>
+          </div>
         </section>
     <Footer/>
   </div>
@@ -88,6 +92,6 @@ export default {
 
     .blog {
         color: $blue-2;
-        padding: 2.5em 0;
+        margin: 2em 0;
     }
 </style>

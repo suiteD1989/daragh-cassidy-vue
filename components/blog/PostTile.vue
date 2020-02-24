@@ -1,6 +1,6 @@
 <template>
-  <div class="row"> 
-      <div  v-for="(post, index) in posts" v-bind:key="index" class="col-lg-4">
+  <div> 
+      <div  v-for="(post, index) in posts" v-bind:key="index" class="col-lg-4 tile-container">
           <nuxt-link
             :to="'/blog/' + post.fields.slug.trim()" 
             class="blog-link" 
@@ -39,7 +39,6 @@ export default {
     * actually value for prod to prevent posts going live before they're ready
     */
     isPublished (status) {
-      console.log(status)
       if (process.env.SET_ENVIRONMENT === 'development') {
         return true
       } else {
@@ -56,34 +55,37 @@ export default {
   $blue-3: #08605F;
   $black: #443d47;
 
-  .blog-tile {
-    &:hover {
-      .title {
-        color: $blue-3;
+  .tile-container {
+    padding-left: 0;
+    .blog-tile {
+      &:hover {
+        .title {
+          color: $blue-3;
+        }
       }
-    }
-    img {
-      width: 100%;
-    }
-    border: solid 1px $blue-2;
-    margin-bottom: 1em;
-    .tileText {
-      padding: 0 .5em;
-      span {
-        color: $blue-1;
-        text-decoration: none;
-        margin: 1em 0;
-        display: block;
+      img {
+        width: 100%;
       }
-      .title {
-        font-weight: 800;
-        text-transform: uppercase;
-        font-size: 1.1em;
-      }
-      .description {
-        font-size: .9em;
-        font-weight: 400;
-        color: $black;
+      border: solid 1px $blue-2;
+      margin-bottom: 1em;
+      .tileText {
+        padding: 0 .5em;
+        span {
+          color: $blue-1;
+          text-decoration: none;
+          margin: 1em 0;
+          display: block;
+        }
+        .title {
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 1.1em;
+        }
+        .description {
+          font-size: .9em;
+          font-weight: 400;
+          color: $black;
+        }
       }
     }
   }

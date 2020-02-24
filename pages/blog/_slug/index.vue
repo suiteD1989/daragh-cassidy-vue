@@ -1,39 +1,41 @@
 <template>
   <div>
     <Navigation :navLinks="this.navItems"/>
-    <article class="container blog-post content-piece">
-      <div class="row">
-        <div class="col-12">
-          <div class="intro">
-            <h1>{{ page.fields.title }}</h1>
+    <div class="container-fluid">
+      <article class="container blog-post content-piece">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h1>{{ page.fields.title }}</h1>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 my-auto">
-          <div class="author">
-            <span>{{ page.fields.author.fields.name }}</span>
+        <div class="row">
+          <div class="col-12 my-auto">
+            <div class="author">
+              <span>{{ page.fields.author.fields.name }}</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12"> 
-          <client-only>
-            <img 
-            :data-src="setAutoWidth(page.fields.heroImage.fields.file.url)"
-            :alt="page.fields.heroImage.fields.description"
-            class="lazyload header-img">
-          </client-only>
+        <div class="row">
+          <div class="col-12"> 
+            <client-only>
+              <img 
+              :data-src="setAutoWidth(page.fields.heroImage.fields.file.url)"
+              :alt="page.fields.heroImage.fields.description"
+              class="lazyload header-img">
+            </client-only>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <RichTextRenderer :document="this.richTextField" />
+        <div class="row">
+          <div class="col-12">
+            <RichTextRenderer :document="this.richTextField" />
+          </div>
         </div>
-      </div>
-      <hr>
-      <Author :details="this.author"/>
-    </article>
+        <hr>
+        <Author :details="this.author"/>
+      </article>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -116,7 +118,6 @@ export default {
         'fields.slug': params.slug
     })
     .then(res => {
-        console.log(res.items[0].fields.author.fields.image.fields.file.url)
         return {
             page: res.items[0]
         }
