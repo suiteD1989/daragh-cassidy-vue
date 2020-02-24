@@ -1,6 +1,9 @@
 export default  {
     methods: {
-        checkBrowser () {
+        /**
+         * Check current browser to see if it is compatable
+         */
+        _checkBrowser () {
             if (process.browser) {
                 let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === '[object SafariRemoteNotification]'; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification))
                 let isInterEx = /*@cc_on!@*/false || !!document.documentMode
@@ -18,6 +21,9 @@ export default  {
                 return
             }
         },
+        /**
+         * Check if screen is less than 800px
+         */
         CheckMobile () {
             if (process.browser) {
                 if (window.innerWidth <= 800) {
@@ -27,16 +33,26 @@ export default  {
                 }
             }
         },
+        /**
+         * 
+         * @param {*} url 
+         * returns a smaller version of image
+         */
         thumbnailImage (url) {
-            if (this.checkBrowser()) {
+            if (this._checkBrowser()) {
                 return url + '?w=650'
             } else {
                 return url + '?w=650&fm=webp'
             }
         },
+        /**
+         * 
+         * @param {*} url 
+         * sets the width of image to that of browser window
+         */
         setAutoWidth (url) {
             if (process.browser) {
-                if (this.checkBrowser()) {
+                if (this._checkBrowser()) {
                     return url + '?w=' + window.innerWidth
                 } else {
                     return url + '?w=' + window.innerWidth + '&fm=webp'
@@ -45,23 +61,17 @@ export default  {
                 return url
             }
         },
+        /**
+         * 
+         * @param {*} url 
+         * @param {*} width 
+         * Sets image to a fixed width. Function recieves url and width as params
+         */
         setFixedWidth (url, width) {
-            if (this.checkBrowser()) {
+            if (this._checkBrowser()) {
                 return url + '?w=' + width
             } else {
                 return url + '?w=' + width + '&fm=webp'
-            }
-        },
-        setWidthDivision (url, dividend) {
-            if (process.browser) {
-                let width = window.innerWidth / dividend
-            if (this.checkBrowser()) {
-                return url + '?w=' + width
-            } else {
-                return url + '?w=' + width + '&fm=webp'
-            }
-            } else {
-                return url
             }
         }
     }
