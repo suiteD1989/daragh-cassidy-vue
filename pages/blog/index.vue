@@ -1,13 +1,13 @@
 <template>
   <div>
     <Navigation :navLinks="this.navItems"/>
-        <section class="blog container-fluid content-piece">
-          <div class="container">
-            <div  class="row">
-              <PostTile :posts="blogPosts"/>
-            </div>
-          </div>
-        </section>
+    <section class="blog container-fluid content-piece">
+      <div class="container">
+        <div  class="row">
+          <PostTile :posts="blogPosts"/>
+        </div>
+      </div>
+    </section>
     <Footer/>
   </div>
 </template>
