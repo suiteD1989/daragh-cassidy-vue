@@ -94,22 +94,22 @@ export default {
         },
         {
           hid: 'og:title',
-          name: 'og:title',
+          property: 'og:title',
           content: this.page.fields.title
         },
         {
           hid: 'description',
-          name: 'description',
+          property: 'description',
           content: this.page.fields.description
         },
         {
           hid: 'og:description',
-          name: 'og:description',
+          property: 'og:description',
           content: this.page.fields.description
         },
         {
           hid: 'og:image',
-          name: 'og:image',
+          property: 'og:image',
           content: this.page.fields.heroImage.fields.file.url
         }
       ]
