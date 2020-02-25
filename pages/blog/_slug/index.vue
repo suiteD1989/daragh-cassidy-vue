@@ -20,10 +20,12 @@
         </div>
         <div class="row">
           <div class="col-12"> 
-            <img 
+            <client-only>
+              <img 
               :data-src="returnAutoWidth(page.fields.heroImage.fields.file.url)"
               :alt="page.fields.heroImage.fields.description"
               class="lazyload header-img">
+            </client-only>
           </div>
         </div>
         <div class="row">
