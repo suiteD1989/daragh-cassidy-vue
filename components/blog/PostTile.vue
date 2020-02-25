@@ -1,35 +1,34 @@
 <template>
   <div> 
-      <div  v-for="(post, index) in posts" v-bind:key="index" class="col-lg-4 tile-container">
-          <nuxt-link
-            :to="'/blog/' + post.fields.slug.trim()" 
-            class="blog-link" 
-            v-if="isPublished(post.fields.published)">
-            <div class="blog-tile">
-              <img 
-                :data-src="thumbnailImage(post.fields.heroImage.fields.file.url)" 
-                :alt="post.fields.heroImage.fields.description"
-                class="lazyload">
-              <div class="tileText">
-                <span class="title">
-                    {{ post.fields.title }}
-                </span>
-                <span class="description">
-                    {{ post.fields.description }}
-                </span>
-              </div>
-            </div>
-          </nuxt-link>
-      </div>
+    <div  v-for="(post, index) in posts" v-bind:key="index" class="col-lg-4 tile-container">
+      <nuxt-link
+        :to="'/blog/' + post.fields.slug.trim()" 
+        class="blog-link" 
+        v-if="isPublished(post.fields.published)">
+        <div class="blog-tile">
+          <img 
+            :data-src="returnThumbnail(post.fields.heroImage.fields.file.url)" 
+            :alt="post.fields.heroImage.fields.description"
+            class="lazyload">
+          <div class="tileText">
+            <span class="title">
+                {{ post.fields.title }}
+            </span>
+            <span class="description">
+                {{ post.fields.description }}
+            </span>
+          </div>
+        </div>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
 
-import optimise from '~/mixins/optimise.js'
+import {thumbnailImage} from 'contentful-image-optimiser'
 
 export default {
-  mixins: [optimise],
   props: {
       posts: Array
   },
@@ -44,6 +43,14 @@ export default {
       } else {
         return status
       }
+    },
+    /**
+    * 
+    * @param {*} url 
+    * takes an image url to process for autowidth optimising
+    */
+    returnThumbnail (url) {
+      return thumbnailImage(url)
     }
   }
 }

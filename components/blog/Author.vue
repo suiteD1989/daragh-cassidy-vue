@@ -4,7 +4,9 @@
             <h2>About Daragh</h2>
         </div>
         <div class="col-md-3 col-lg-3 col-sm-12 my-auto profile-parent">
-            <img :data-src="this.details.fields.image.fields.file.url" class="lazyload profile" alt="Hi, my name is Daragh!">
+            <client-only>
+                <img :data-src="this.returnAutoWidth(this.details.fields.image.fields.file.url)" class="lazyload profile" alt="Hi, my name is Daragh!">
+            </client-only>
         </div>
         <div class="col-md-9 col-lg-9 col-sm-12">
             <div class="col-12">
@@ -27,6 +29,9 @@
 </template>
 
 <script>
+
+import {setAutoWidth} from 'contentful-image-optimiser'
+
 export default {
     name: 'Author',
     props: {
@@ -42,6 +47,7 @@ export default {
     },
     methods: {
         /**
+        * @param {*} items 
         * Push all social links into array for easy access
         */
         combineSocial (items) {
@@ -59,6 +65,14 @@ export default {
                     'title': 'SoundCloud'
                 }
             )
+        },
+        /**
+        * 
+        * @param {*} url 
+        * takes an image url to process for autowidth optimising
+        */
+        returnAutoWidth (url) {
+            return setAutoWidth(url)
         }
     }
 }

@@ -20,12 +20,10 @@
         </div>
         <div class="row">
           <div class="col-12"> 
-            <client-only>
-              <img 
-              :data-src="setAutoWidth(page.fields.heroImage.fields.file.url)"
+            <img 
+              :data-src="returnAutoWidth(page.fields.heroImage.fields.file.url)"
               :alt="page.fields.heroImage.fields.description"
               class="lazyload header-img">
-            </client-only>
           </div>
         </div>
         <div class="row">
@@ -47,17 +45,15 @@ import Navigation from '~/components/navigation.vue';
 import RichTextRenderer from 'contentful-rich-text-vue-renderer';
 import Author from '~/components/blog/Author'
 import Footer from '~/components/footer.vue';
-
 import robots from '~/mixins/robots.js';
-import optimise from '~/mixins/optimise.js';
-
 import {createClient} from '~/plugins/contentful';
+import {setAutoWidth} from 'contentful-image-optimiser'
 
 const contentfulClient = createClient();
 
 export default {
   name: 'index',
-  mixins: [robots, optimise],
+  mixins: [robots],
   components: {
     Navigation,
     RichTextRenderer,
@@ -113,6 +109,16 @@ export default {
           content: this.page.fields.heroImage.fields.file.url
         }
       ]
+    }
+  },
+  methods: {
+    /**
+    * 
+    * @param {*} url 
+    * takes an image url to process for autowidth optimising
+    */
+    returnAutoWidth (url) {
+      return setAutoWidth(url)
     }
   },
   created () {
