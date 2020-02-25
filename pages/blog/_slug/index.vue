@@ -14,7 +14,7 @@
           <div class="col-12 my-auto">
             <div class="author">
               <span>{{ page.fields.author.fields.name }}</span>
-              <span>{{ this.publishDate }}</span>
+              <span>Published | {{ this.publishDate }}</span>
             </div>
           </div>
         </div>
