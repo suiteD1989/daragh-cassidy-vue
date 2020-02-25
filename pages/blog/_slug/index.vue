@@ -165,7 +165,7 @@ export default {
     }
     p {
       padding: .75em 0;
-      font-size: 1.1em;
+      font-size: 1.2em;
       letter-spacing: .8px;
     }
     a {

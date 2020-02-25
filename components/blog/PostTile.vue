@@ -81,6 +81,8 @@ export default {
           color: $blue-1;
           text-decoration: none;
           margin: 1em 0;
+          font-size: 1.2em;
+          letter-spacing: .8px;
           display: block;
         }
         .title {

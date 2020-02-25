@@ -82,7 +82,7 @@ export default {
         }
         p {
             font-size: 1.2em;
-            font-weight: 100;
+            letter-spacing: .8px;
         }
         .top {
             padding-top: 0.5em;
