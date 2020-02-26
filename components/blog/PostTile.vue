@@ -28,7 +28,7 @@
 
 <script>
 
-import {thumbnailImage} from 'contentful-image-optimiser'
+import {thumbnailImage, setFixedWidth} from 'contentful-image-optimiser'
 
 export default {
   props: {
@@ -52,7 +52,7 @@ export default {
     * takes an image url to process for autowidth optimising
     */
     returnThumbnail (url) {
-      return thumbnailImage(url)
+      return setFixedWidth(url, 650)
     }
   }
 }
