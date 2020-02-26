@@ -6,10 +6,12 @@
         class="blog-link" 
         v-if="isPublished(post.fields.published)">
         <div class="blog-tile">
-          <img 
-            :data-src="returnThumbnail(post.fields.heroImage.fields.file.url)" 
-            :alt="post.fields.heroImage.fields.description"
-            class="lazyload">
+          <client-only>
+            <img 
+              :data-src="returnThumbnail(post.fields.heroImage.fields.file.url)" 
+              :alt="post.fields.heroImage.fields.description"
+              class="lazyload">
+          </client-only>
           <div class="tileText">
             <span class="title">
                 {{ post.fields.title }}
