@@ -15,8 +15,7 @@ import HeaderSection from '~/components/home/header.vue'
 import AboutSection from '~/components/home/aboutSection.vue'
 import OptimiseSection from '~/components/home/optimiseSection.vue'
 import Footer from '~/components/footer.vue'
-
-import robots from '~/mixins/robots.js';
+import robots from '~/mixins/robots.js'
 
 export default {
   components: {
