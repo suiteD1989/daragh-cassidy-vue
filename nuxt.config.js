@@ -1,6 +1,6 @@
 const checkProduction = process.env.SET_ENVIRONMENT === 'production'
 const env = checkProduction ? require('dotenv').config({ path: 'production.env' }) : require('dotenv').config({ path: 'staging.env' })
-import fetchAppRoutes from './utils/fetchRoutes.js';
+import fetchAppRoutes from './utils/fetchRoutes.js'
 
 export default {
   mode: 'universal',
@@ -25,7 +25,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#177E89' },
   /*
   ** Global CSS
   */
@@ -36,7 +36,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/lazysizes'
+    '~/plugins/lazysizes',
   ],
   /*
   ** Nuxt.js dev-modules

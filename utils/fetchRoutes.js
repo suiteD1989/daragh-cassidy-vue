@@ -1,5 +1,5 @@
-const createCLient = require('./contentful.js')
-const contentfulClient = createCLient.createClient()
+import createClient from '../utils/contentful.js';
+const contentfulClient = createClient()
 
 const transformer = (data) => {
     let routes = []

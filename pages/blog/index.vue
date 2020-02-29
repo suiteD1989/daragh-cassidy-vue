@@ -18,7 +18,7 @@ import Navigation from '~/components/navigation.vue';
 import Footer from '~/components/footer.vue';
 import PostTile from '~/components/blog/PostTile.vue';
 import robots from '~/mixins/robots.js';
-import { createClient } from '~/utils/contentful.js';
+import createClient from '~/utils/contentful.js';
 
 const contentfulClient = createClient();
 
