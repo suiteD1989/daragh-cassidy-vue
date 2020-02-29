@@ -1,4 +1,4 @@
-echo "Running staging build..."
+echo "Running production build..."
 
 npm run build
 
