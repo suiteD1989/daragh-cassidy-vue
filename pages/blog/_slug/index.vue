@@ -48,7 +48,7 @@ import RichTextRenderer from 'contentful-rich-text-vue-renderer';
 import Author from '~/components/blog/Author'
 import Footer from '~/components/footer.vue';
 import robots from '~/mixins/robots.js';
-import {createClient} from '~/plugins/contentful';
+import {createClient} from '~/utils/contentful.js';
 import {setAutoWidth} from 'contentful-image-optimiser'
 
 const contentfulClient = createClient();
