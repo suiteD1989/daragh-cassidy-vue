@@ -170,6 +170,11 @@ export default {
       font-size: 1.2em;
       letter-spacing: .8px;
     }
+    ul {
+      p {
+        padding: 0;
+      }
+    }
     a {
       color: $blue-1;
         &:hover {

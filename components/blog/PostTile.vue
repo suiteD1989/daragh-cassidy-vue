@@ -1,9 +1,9 @@
 <template>
-  <div> 
-    <div  v-for="(post, index) in posts" v-bind:key="index" class="col-lg-4 tile-container">
+  <div class="flex-items"> 
+    <div  v-for="(post, index) in posts" v-bind:key="index" class="col-lg-4 col-xs-12 tile-container">
       <nuxt-link
         :to="'/blog/' + post.fields.slug.trim()" 
-        class="blog-link" 
+        class="blog-link d-flex" 
         v-if="isPublished(post.fields.published)">
         <div class="blog-tile">
           <client-only>
@@ -64,9 +64,21 @@ export default {
   $blue-3: #08605F;
   $black: #443d47;
 
+  .flex-items {
+    display: flex;
+  }
   .tile-container {
     padding-left: 0;
+    align-items: stretch;
+    display: flex;
+    flex: 1;
+    justify-content: stretch;
     .blog-tile {
+      border: solid 1px #177E89;
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       &:hover {
         .title {
           color: $blue-3;
@@ -74,6 +86,7 @@ export default {
       }
       img {
         width: 100%;
+        padding: 1em;
       }
       border: solid 1px $blue-2;
       margin-bottom: 1em;
@@ -98,6 +111,11 @@ export default {
           color: $black;
         }
       }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .flex-items {
+      display: block;
     }
   }
 </style>
