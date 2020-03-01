@@ -79,6 +79,10 @@ export default {
         a {
             color: $blue-2;
             font-weight: bold;
+            transition: all .5s;
+                &:hover {
+                    color: $blue-1;
+                }
         }
         p {
             font-size: 1.2em;
